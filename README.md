@@ -69,7 +69,7 @@ python manage.py runserver
 
 Установка PostgreSQL:
 
-Скачай и установи [PostgreSQL(https://www.postgresql.org/)] для Windows.
+Скачай и установи [PostgreSQL](https://www.postgresql.org/) для Windows.
 Во время установки отметь опцию Install Stack Builder для дополнительной настройки.
 Вход в PostgreSQL:
 
