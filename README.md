@@ -1,4 +1,4 @@
-#Order_PRJ
+#Order_PRJ#
 **DRF + Swagger**
 
 ✅ JWT авторизация
@@ -8,7 +8,7 @@
 
 🏗️ Запуск
 
-##Linux (Debian/Ubuntu)
+##Linux (Debian/Ubuntu)##
 Обновление системы и установка зависимостей:
 
 ```bash
@@ -61,7 +61,7 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-##Windows
+##Windows##
 Установка Python и pip:
 
 Скачай и установи [Python](https://www.python.org/), убедившись, что выбрал опцию Add Python to PATH.
