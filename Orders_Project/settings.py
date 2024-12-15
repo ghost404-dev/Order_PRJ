@@ -153,9 +153,14 @@ LOGGING = {
 
 if 'test' in sys.argv:
     DATABASES['default'] = {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': ':memory:',  # Использование SQLite базы данных в памяти для тестов
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'test_orders_db',  # Укажите название базы данных для тестов
+        'USER': 'postgres',         # Укажите имя пользователя PostgreSQL
+        'PASSWORD': '12123212',     # Укажите пароль
+        'HOST': 'localhost',        # Укажите хост (обычно localhost для локального окружения)
+        'PORT': '5432',             # Порт PostgreSQL (по умолчанию 5432)
     }
+
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
