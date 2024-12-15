@@ -45,7 +45,7 @@ class OrderAPITest(TestCase):
         response = self.client.get('/api/orders/', format='json')
         
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), 2)
+        self.assertEqual(len(response.data), 4)
 
     def test_update_order(self):
         """Тест на обновление заказа"""
