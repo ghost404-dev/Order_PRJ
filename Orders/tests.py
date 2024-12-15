@@ -7,15 +7,17 @@ from django.contrib.auth.models import User
 class OrderAPITest(TestCase):
     
     def setUp(self):
+        # Удаляем все заказы перед каждым тестом
+        Order.objects.all().delete()
+        
         # Создаем тестового пользователя
         self.user = User.objects.create_user(username='testuser', password='testpass')
         self.client = APIClient()
         
         # Логинимся с использованием JWT
-        # Получаем JWT токен
         response = self.client.post('/api/token/', {'username': 'testuser', 'password': 'testpass'})
         self.token = response.data['access']
-
+        
         # Устанавливаем токен в заголовки для всех запросов
         self.client.credentials(HTTP_AUTHORIZATION='Bearer ' + self.token)
 
@@ -70,4 +72,3 @@ class OrderAPITest(TestCase):
 
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
         self.assertEqual(Order.objects.count(), 0)
-
