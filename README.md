@@ -64,39 +64,55 @@ python manage.py runserver
 ##Windows
 Установка Python и pip:
 
-Скачай и установи Python, убедившись, что выбрал опцию Add Python to PATH.
+Скачай и установи [Python](https://www.python.org/), убедившись, что выбрал опцию Add Python to PATH.
 Установка Git (если не установлен):
 
-Скачай и установи Git.
 Установка PostgreSQL:
 
-Скачай и установи PostgreSQL для Windows.
+Скачай и установи [PostgreSQL(https://www.postgresql.org/)] для Windows.
 Во время установки отметь опцию Install Stack Builder для дополнительной настройки.
 Вход в PostgreSQL:
 
 Открой командную строку PostgreSQL и выполни:
+```CMD
 psql -U postgres
+```
 Создание базы данных:
 
+```CMD
 CREATE DATABASE orders_db;
+```
 Клонирование репозитория:
 Открой командную строку (CMD) или PowerShell и выполните:
 
+```CMD
 git clone https://github.com/ghost404-dev/Order_PRJ.git
+```
 Переход в директорию проекта:
 
+```CMD
 cd Order_PRJ
+```
 Создание виртуального окружения:
 
+```CMD
 python -m venv venv
+```
 Активация виртуального окружения: Для CMD:
 
-venv\Scripts\activate Для PowerShell:
+```CMD
 .\venv\Scripts\Activate
+```
 Установка зависимостей:
 
+```CMD
 pip install -r requirements.txt
+```
 Применение миграций:
+```CMD
 python manage.py migrate
+```
 Запуск проекта:
+```CMD
 python manage.py runserver
+```
