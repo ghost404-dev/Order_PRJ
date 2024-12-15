@@ -1,43 +1,102 @@
-# Order_PRJ
-DRF + Swagger 
+#Order_PRJ
+**DRF + Swagger**
 
+✅ JWT авторизация
+✅ Логирование действий
+❌ Обработка ошибок
+❌ Docker
 
-✅
-JWT авторизация
-Логирование действий
-❌
-обработка ошибок
-Docker
+🏗️ Запуск
 
-🏗️
-# Запуск
+##Linux (Debian/Ubuntu)
+Обновление системы и установка зависимостей:
 
-## Linux(Debain/Ubuntu)
-``` bash
+```bash
 sudo apt update -y && sudo apt upgrade -y && sudo apt install python3 python3-pip
-```
-``` bash
 sudo apt install python3-venv
+sudo apt install postgresql postgresql-contrib
 ```
-``` bash 
+Вход в PostgreSQL:
+
+```bash
+sudo -u postgres psql
+```
+Создание базы данных:
+
+```SQL
+CREATE DATABASE orders_db;
+```
+Клонирование репозитория:
+
+```bash
 git clone https://github.com/ghost404-dev/Order_PRJ.git
 ```
-``` bash 
+Переход в директорию проекта:
+
+```bash
 cd /Order_PRJ
 ```
-``` bash 
+Создание виртуального окружения:
+
+```bash
 python3 -m venv venv
 ```
-``` bash 
+Активация виртуального окружения:
+
+```bash
 source venv/bin/activate
 ```
-``` bash 
+Установка зависимостей:
+```bash
 pip install -r requirements.txt
 ```
-``` bash 
+Применение миграций:
+
+```bash
+python manage.py migrate
+```
+Запуск проекта:
+
+```bash
 python manage.py runserver
 ```
 
+##Windows
+Установка Python и pip:
 
+Скачай и установи Python, убедившись, что выбрал опцию Add Python to PATH.
+Установка Git (если не установлен):
 
+Скачай и установи Git.
+Установка PostgreSQL:
 
+Скачай и установи PostgreSQL для Windows.
+Во время установки отметь опцию Install Stack Builder для дополнительной настройки.
+Вход в PostgreSQL:
+
+Открой командную строку PostgreSQL и выполни:
+psql -U postgres
+Создание базы данных:
+
+CREATE DATABASE orders_db;
+Клонирование репозитория:
+Открой командную строку (CMD) или PowerShell и выполните:
+
+git clone https://github.com/ghost404-dev/Order_PRJ.git
+Переход в директорию проекта:
+
+cd Order_PRJ
+Создание виртуального окружения:
+
+python -m venv venv
+Активация виртуального окружения: Для CMD:
+
+venv\Scripts\activate Для PowerShell:
+.\venv\Scripts\Activate
+Установка зависимостей:
+
+pip install -r requirements.txt
+Применение миграций:
+python manage.py migrate
+Запуск проекта:
+python manage.py runserver
