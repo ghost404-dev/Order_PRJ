@@ -24,9 +24,9 @@ class OrderAPITest(TestCase):
         data = {
             "project_name": "Test Project",
             "description": "Test Description",
-            "status": "новый",
+            "status": "new",
             "client": "Client Name",
-            "due_date": "2024-12-31",
+            "deadline": "2024-12-31",
         }
         response = self.client.post('/api/orders/', data, format='json')
 
@@ -37,8 +37,8 @@ class OrderAPITest(TestCase):
     def test_get_orders(self):
         """Тест на получение списка заказов"""
         # Создаем тестовые заказы
-        Order.objects.create(project_name='Test Project 1', client='Client 1', status='новый', due_date='2024-12-31')
-        Order.objects.create(project_name='Test Project 2', client='Client 2', status='в работе', due_date='2024-12-31')
+        Order.objects.create(project_name='Test Project 1', client='Client 1', status='new', deadline='2024-12-31')
+        Order.objects.create(project_name='Test Project 2', client='Client 2', status='in_progress', deadline='2024-12-31')
 
         response = self.client.get('/api/orders/', format='json')
         
@@ -47,24 +47,24 @@ class OrderAPITest(TestCase):
 
     def test_update_order(self):
         """Тест на обновление заказа"""
-        order = Order.objects.create(project_name='Old Project', client='Client 1', status='новый', due_date='2024-12-31')
+        order = Order.objects.create(project_name='Old Project', client='Client 1', status='new', deadline='2024-12-31')
         data = {
             "project_name": "Updated Project",
             "description": "Updated Description",
-            "status": "в работе",
+            "status": "in_progress",
             "client": "Updated Client",
-            "due_date": "2025-01-01",
+            "deadline": "2025-01-01",
         }
         response = self.client.put(f'/api/orders/{order.id}/', data, format='json')
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         order.refresh_from_db()
         self.assertEqual(order.project_name, 'Updated Project')
-        self.assertEqual(order.status, 'в работе')
+        self.assertEqual(order.status, 'in_progress')
 
     def test_delete_order(self):
         """Тест на удаление заказа"""
-        order = Order.objects.create(project_name='Project to Delete', client='Client 1', status='новый', due_date='2024-12-31')
+        order = Order.objects.create(project_name='Project to Delete', client='Client 1', status='new', deadline='2024-12-31')
         
         response = self.client.delete(f'/api/orders/{order.id}/', format='json')
 
