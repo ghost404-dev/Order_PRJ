@@ -61,7 +61,7 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-## Windows
+## Windows (!!! НЕ ТЕСТИРОВАЛ !!!) 
 Установка Python и pip:
 
 Скачай и установи [Python](https://www.python.org/), убедившись, что выбрал опцию Add Python to PATH.
