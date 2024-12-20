@@ -3,7 +3,6 @@
 
 ✅ JWT авторизация <br>
 ✅ Логирование действий <br>
-❌ Пагинация <br>
 ❌ Обработка ошибок <br>
 ❌ Docker <br>
 
@@ -35,7 +34,7 @@ git clone https://github.com/ghost404-dev/Order_PRJ.git
 Переход в директорию проекта:
 
 ```bash
-cd /Order_PRJ
+cd Order_PRJ
 ```
 Создание виртуального окружения:
 
